@@ -12,8 +12,9 @@ class Solution {
 public:
     bool isValid(string s) {
 		string::size_type len = s.size();        
-		if (len == 0 || len % 2 != 0)
+		if (len == 0 || (len & 1)) {
 			return false;
+		}
 
 		string::size_type i = 0;
 		for (; i < len; i += 2) {
