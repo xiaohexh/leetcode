@@ -19,8 +19,8 @@ public:
 		string::size_type i = 0;
 		for (; i < len; i += 2) {
 			if (s[i] == '(' && s[i + 1] != ')') return false;
-			if (s[i] == '[' && s[i + 1] != ']') return false;
-			if (s[i] == '{' && s[i + 1] != '}') return false;
+			else if (s[i] == '[' && s[i + 1] != ']') return false;
+			else if (s[i] == '{' && s[i + 1] != '}') return false;
 		}
 
 		return true;
