@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 using std::cout;
 using std::endl;
 using std::string;
@@ -20,12 +21,14 @@ public:
     }
 };
 
-int main()
+int main(int argc, char **argv)
 {
-	int a = 93;
-
+	if (argc < 2) {
+		cout << "usage:" << argv[0] << " number" << endl;
+		return 1;
+	}
 	Solution itr;
-	cout << itr.intToRoman(a) << endl;
+	cout << itr.intToRoman(atoi(argv[1])) << endl;
 
 	return 0;
 }
